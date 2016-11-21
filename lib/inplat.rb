@@ -1,6 +1,9 @@
 require "inplat/version"
 require "inplat/configuration"
+require "inplat/api"
 require "rest-client"
+require "openssl"
+require "Base64"
 require "json"
 
 module Inplat
@@ -15,6 +18,6 @@ module Inplat
   end
 
   def build
-    Api.new(configuration, RestClient::Resource.new(configuration.host))
+    Api.new(configuration, RestClient)
   end
 end
