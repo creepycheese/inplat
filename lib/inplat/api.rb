@@ -25,7 +25,17 @@ module Inplat
   end
 
   class Api
-    POST_METHODS = ["form", "init", "check"].freeze
+    POST_METHODS = ["form",
+                    "init",
+                    "check",
+                    "pay",
+                    "refund",
+                    "link",
+                    "links",
+                    "unlink",
+                    "reverse",
+                    "confirm",
+                    "result"].freeze
 
     def initialize(configuration, client)
       @configuration = configuration
@@ -36,7 +46,7 @@ module Inplat
       define_method(method_name) do |params|
         params = params.merge(method: method_name)
         signed_request = SignedRequest.new(host: configuration.host, request_params: params,
-                                             secret: configuration.secret, api_key: configuration.api_key)
+                                           secret: configuration.secret, api_key: configuration.api_key)
 
         JSON.parse(client.post(signed_request.signed_uri, signed_request.request_body, {content_type: "application/json"}))
       end
