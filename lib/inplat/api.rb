@@ -47,7 +47,7 @@ module Inplat
         signed_request = SignedRequest.new(host: configuration.host, request_params: params,
                                            secret: configuration.secret, api_key: configuration.api_key)
 
-        JSON.parse(client.post(signed_request.signed_uri, signed_request.request_body, {content_type: "application/json"}))
+        JSON.parse(client.post(signed_request.signed_uri, signed_request.request_body, { content_type: "application/json; charset=utf-8" }))
       end
     end
 
