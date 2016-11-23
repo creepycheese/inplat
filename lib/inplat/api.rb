@@ -33,9 +33,8 @@ module Inplat
                     "link",
                     "links",
                     "unlink",
-                    "reverse",
-                    "confirm",
-                    "result"].freeze
+                    "reverse"
+                    ].freeze
 
     def initialize(configuration, client)
       @configuration = configuration
