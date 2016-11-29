@@ -1,6 +1,6 @@
 # Inplat
 
-This is simple wrapper for [Inplat](https://inplat.ru/) payment provider.
+This is simple wrapper for [Inplat](https://inplat.ru/f) payment provider.
 
 ## Installation
 
@@ -47,10 +47,10 @@ init_params = {
 
 api.init(init_params)
 
-# => {"id"=>533728005314193050, "fail_callback_url"=>"http://7359e5b6.ngrok.io/inplat_callbacks",
-# "success_callback_url"=>"http://7359e5b6.ngrok.io/inplat_callbacks",
-# "success_redirect_url"=>"http://7359e5b6.ngrok.io/inplat_redirects", "code"=>0,
-# "fail_redirect_url"=>"http://7359e5b6.ngrok.io/inplat_redirects", "message"=>"Операция выполнена успешно. ",
+# => {"id"=>533728005314193050, "fail_callback_url"=>"http://example.com/inplat_callbacks",
+# "success_callback_url"=>"http://example.com/inplat_callbacks",
+# "success_redirect_url"=>"http://example.com/inplat_redirects", "code"=>0,
+# "fail_redirect_url"=>"http://example.com/inplat_redirects", "message"=>"Операция выполнена успешно. ",
 # "url"=>"google.com?payment_id=533728005314193050&orderId=af5408c2-e550-444d-8ccb-4edc0adf3602"}
 ```
 ## Contributing
