@@ -1,6 +1,6 @@
 # Inplat
 
-This is simple wrapper for [Inplat](https://inplat.ru/f) payment provider.
+This is simple wrapper for [Inplat](https://inplat.ru/) payment provider.
 
 ## Installation
 
