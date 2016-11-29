@@ -19,7 +19,7 @@ Or install it yourself as:
     $ gem install inplat
 
 ## Usage
-First configure gem(e.g. for Rails prokects this can be put into `initializers/inplat.rb`):
+First configure gem(e.g. for Rails projects this can be put into `initializers/inplat.rb`):
 
 ```ruby
 Inplat.configure do |config|
