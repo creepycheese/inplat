@@ -21,19 +21,43 @@ Or install it yourself as:
     $ gem install inplat
 
 ## Usage
+First configure gem(e.g. for Rails prokects this can be put into `initializers/inplat.rb`):
 
-TODO: Write usage instructions here
+```ruby
+Inplat.configure do |config|
+  config.api_key = "your api key"
+  config.secret = "your api secret"
+  config.environment = :demo
+end
+```
 
-## Development
+Then you can perform requests in the following way:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+api = Inplat.build
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+init_params = {
+  redirect_url: "google.com",
+  pay_type: "card",
+  params: { account: "test",
+            sum: 10000,
+            email: "pay@example.com",
+            details: "LALALALLA",
+            address: "test" },
+  pay_params: { pan: "5457210001000019", expire_month: "12", expire_year: "2025", cvv:"123", cardholder_name: "Test Card" }
+}
 
+api.init(init_params)
+
+  # => {"id"=>533728005314193050, "fail_callback_url"=>"http://7359e5b6.ngrok.io/inplat_callbacks",
+  # "success_callback_url"=>"http://7359e5b6.ngrok.io/inplat_callbacks",
+  # "success_redirect_url"=>"http://7359e5b6.ngrok.io/inplat_redirects", "code"=>0,
+  # "fail_redirect_url"=>"http://7359e5b6.ngrok.io/inplat_redirects", "message"=>"Операция выполнена успешно. ",
+  # "url"=>"google.com?payment_id=533728005314193050&orderId=af5408c2-e550-444d-8ccb-4edc0adf3602"}
+```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/inplat.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/creepychese/inplat.
 
 ## License
 
