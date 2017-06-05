@@ -3,7 +3,7 @@ require "inplat/configuration"
 require "inplat/api"
 require "rest-client"
 require "openssl"
-require "Base64"
+require "base64"
 require "json"
 
 module Inplat
